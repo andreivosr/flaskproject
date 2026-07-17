@@ -1,0 +1,12 @@
+# cria o .gitignore
+echo "__pycache__/
+*.pyc
+.idea/
+.venv/" > .gitignore
+
+# remove do controle de versão, mas mantém localmente
+git rm -r --cached __pycache__ .idea
+
+git add .gitignore
+git commit -m "adiciona .gitignore e remove arquivos de IDE/cache"
+git push origin main
