@@ -17,3 +17,6 @@ def ola(nome):
 def produtos():
     produtos = ['aaa', 'bbb', 'ccc', 'ddd']
     return jsonify(produtos)
+
+if __name__ == "__main__":
+    app.run(debug=True)
