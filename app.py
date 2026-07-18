@@ -24,5 +24,11 @@ def produtos():
 def listar_objetos():
     return jsonify(objetos)
 
+@app.route('/objetos/<nome>', methods=["POST"])
+def adicionar_objeto(nome):
+    objeto = {'nome': nome}
+    objetos.append(objeto)
+    return jsonify(objeto), 201
+
 if __name__ == "__main__":
     app.run(debug=True)
