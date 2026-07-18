@@ -1,5 +1,7 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 app = Flask(__name__)
+
+objetos = []
 
 @app.route('/')
 def index():
@@ -17,6 +19,10 @@ def ola(nome):
 def produtos():
     produtos = ['aaa', 'bbb', 'ccc', 'ddd']
     return jsonify(produtos)
+
+@app.route('/objetos', methods=["GET"])
+def listar_objetos():
+    return jsonify(objetos)
 
 if __name__ == "__main__":
     app.run(debug=True)
